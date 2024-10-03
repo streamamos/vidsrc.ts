@@ -8,9 +8,17 @@ import tmdbScrape from "../src/vidsrc";
 
 const app = new Hono()
 
+// Middleware to set CORS headers
+app.use('*', (c, next) => {
+  c.res.headers.set('Access-Control-Allow-Origin', '*');
+  c.res.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  c.res.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+  return next();
+});
+
 app.get('/', (c) => {
-  return c.json({ message: "Congrats! Api working :)" })
-})
+  return c.json({ message: "Congrats! Api working :)" });
+});
 
 app.get("/:id/:ss?/:ep?", async (c) => {
   const { id, ss, ep } = c.req.param();
