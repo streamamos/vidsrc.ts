@@ -11,7 +11,7 @@ import * as cheerio from "npm:cheerio"; // FOR DENO
 import * as cheerio from "cheerio";
 import { decrypt } from "./helpers/decoder";
 
-let BASEDOM = "https://whisperingauroras.com";
+let BASEDOM = "https://ate60vs7zcjhsjo5qgv8.com";
 
 interface Servers {
   name: string | null;
