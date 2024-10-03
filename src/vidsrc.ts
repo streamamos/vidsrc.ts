@@ -24,6 +24,7 @@ interface RCPResponse {
 async function serversLoad(html: string): Promise<{ servers: Servers[]; title: string }> {
   try {
     const $ = cheerio.load(html);
+    console.log($);
     const servers: Servers[] = [];
     const title = $("title").text() ?? "";
     const base = $("iframe").attr("src") ?? "";
