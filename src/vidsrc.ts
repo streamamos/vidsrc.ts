@@ -111,6 +111,7 @@ async function tmdbScrape(tmdbId: string, type: "movie" | "tv", season?: number,
   const embed = await fetch(url);
   console.log(embed);
   const embedResp = await embed.text();
+  console.log(embedResp);
 
   // get some metadata
   const { servers, title } = await serversLoad(embedResp);
